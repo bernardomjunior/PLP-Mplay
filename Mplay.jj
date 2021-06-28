@@ -1,0 +1,94 @@
+PARSER_BEGIN(Mplay)
+import classes.*;
+
+public class Mplay {
+    public static void main(String[] args) throws ParseException {
+        Mplay calc = new Mplay(System.in);
+        calc.input();
+    }
+}
+
+PARSER_END(Mplay)
+
+SKIP : { /* WHITE SPACE */
+    " " | "\t" |  "\r" | "\f"
+}
+
+TOKEN : { /* TIPOS */
+    <NUMBER: (["0" - "9"])+> |
+    <ID: ["a"-"z", "A"-"Z"](["a"-"z", "A"-"Z", "0"-"9"])*> |
+    <EOL: "\n">
+}
+
+TOKEN : { /* OPERAÇÕES */
+    <PLUS: "+" > |
+    <MINUS: "-">
+}
+
+void input() : {
+    Expression expression;
+}{
+    expression = PExpBinary() <EOL>
+    {
+        System.out.println(expression.evaluate());
+    }
+}
+
+NumberValue PNumber(): {
+    Token number;
+}{
+    number = <NUMBER>
+    {return new NumberValue(Integer.parseInt(number.image));}
+}
+
+
+Value PExpMinus() :{
+    NumberValue number;
+}
+{
+    <MINUS> number = PNumber()
+    {
+        number.setValue(-number.getValue());
+        return number;
+    }
+}
+
+Value PExpPlus() :{
+    NumberValue number;
+}{
+    <PLUS> number = PNumber()
+    {
+        number.setValue(number.getValue());
+        return number;
+    }
+}
+
+Expression PExpUnary() :{
+    Expression expression;
+}{
+    (expression = PExpMinus() |
+    expression = PExpPlus() |
+    expression = PNumber() )
+    {
+        return expression;
+    }
+}
+
+Expression PExpBinary() :{
+    Expression result, second;
+}{
+    result = PExpUnary() (
+        (
+        <PLUS> second = PNumber() {
+            result = new PlusOperator(result, second);
+        }
+        | <MINUS> second = PNumber() {
+            result = new MinusOperator(result, second);
+        }
+        )
+    )*
+    {
+        return result;
+    }
+}
+
