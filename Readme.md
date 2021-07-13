@@ -1,5 +1,5 @@
 ## Students
-Bernardo de Moraes Santana Júnior (bmsj@cin.ufpe.br)
+Bernardo de Moraes Santana Júnior (bmsj@cin.ufpe.br)\
 Daniel Cândido Cauás (dcc4@cin.ufpe.br)
 
 ## About
