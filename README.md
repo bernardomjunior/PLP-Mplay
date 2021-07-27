@@ -18,11 +18,7 @@ mvn package
 ```
 
 
-
-
 # BNF #
-
-
 
 <pre>
 Programa ::= Comando
@@ -54,19 +50,19 @@ ValorConcreto ::= ValorInteiro
 ExpUnaria ::= "-" Expressao 
              |    "not" Expressao 
              |    "length" Expressao 
-             |    <a href="">"identity" Expressao</a>
-             |    <a href="">"transpose" Expressao</a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpIdentity.java">"identity" Expressao</a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpTranspose.java">"transpose" Expressao</a>
 
 ExpBinaria ::= Expressao "+" Expressao
           |    Expressao "-" Expressao
-          |    <a href="">Expressao "*" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMulti.java">Expressao "*" Expressao</a>
           |    Expressao "and" Expressao
           |    Expressao "or" Expressao
           |    Expressao "==" Expressao
           |    Expressao "++" Expressao
-          |    <a href="">Expressao "+++" Expressao</a>
-          |    <a href="">Expressao "---" Expressao</a>
-          |    <a href="">Expressao "***" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSomaMatriz.java">Expressao "+++" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSubMatriz.java">Expressao "---" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMultiMatrix.java">Expressao "***" Expressao</a>
 
 ComandoDeclaracao :: = "{" Declaracao ";" Comando "}"
 
@@ -78,7 +74,7 @@ DeclaracaoProcedimento ::= "proc" Id "(" [ ListaDeclaracaoParametro ] ")" "{" Co
 
 ListaDeclaracaoParametro ::= Tipo Id | Tipo Id "," ListaDeclaracaoParametro
 
-Tipo ::= "string" | "int" | "boolean" | <a href="">"matriz"</a>
+Tipo ::= "string" | "int" | "boolean" | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions1/util/TipoPrimitivo.java">"matriz"</a>
 
 While ::= "while" Expressao "do" Comando
 
