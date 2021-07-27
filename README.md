@@ -45,3 +45,71 @@ Baseado no projeto da equipe:
 * Luana Martins (lms7@cin.ufpe.br)
 * Marcel Rebouças (mscr@cin.ufpe.br)
 * Renato Oliveira (ros3@cin.ufpe.br)
+
+
+#BNF#
+
+
+Programa ::= Comando
+Comando ::= Atribuicao
+
+| ComandoDeclaracao
+| While
+
+| IfThenElse
+
+| IO
+
+| Comando ";" Comando
+
+| Skip
+
+| ChamadaProcedimento
+
+Skip ::=
+Atribuicao ::= Id ":=" Expressao
+
+Expressao ::= Valor | ExpUnaria | ExpBinaria | Id
+
+Valor ::= ValorConcreto
+
+ValorConcreto ::= ValorInteiro | ValorBooleano | ValorString | ValorMatriz
+
+ExpUnaria ::= "-" Expressao | "not" Expressao | "length" Expressao | "identity" Expressao | "transpose" Expressao
+
+ExpBinaria ::= Expressao "+" Expressao
+
+| Expressao "-" Expressao
+| Expressao "*" Expressao
+| Expressao "and" Expressao
+
+| Expressao "or" Expressao
+
+| Expressao "==" Expressao
+
+| Expressao "++" Expressao
+| Expressao "+++" Expressao
+| Expressao "---" Expressao
+| Expressao "***" Expressao
+
+ComandoDeclaracao :: = "{" Declaracao ";" Comando "}"
+Declaracao ::= DeclaracaoVariavel
+
+| DeclaracaoProcedimento
+| Declaracao "," Declaracao
+
+DeclaracaoVariavel ::= "var" Id "=" Expressao
+
+DeclaracaoProcedimento ::= "proc" Id "(" [ ListaDeclaracaoParametro ] ")" "{" Comando "}"
+
+ListaDeclaracaoParametro ::= Tipo Id | Tipo Id "," ListaDeclaracaoParametro
+
+Tipo ::= "string" | "int" | "boolean"
+
+While ::= "while" Expressao "do" Comando
+
+IfThenElse ::= "if" Expressao "then" Comando "else" Comando
+
+IO ::= "write" "(" Expressao ")" | "read" "(" Id ")"
+
+ChamadaProcedimento ::= "call" Id "(" ListaExpressao ")"
