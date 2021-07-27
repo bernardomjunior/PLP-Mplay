@@ -1,9 +1,4 @@
 { 
-   var a  =  1 ,
-   proc incA (int z)  {
-     a := a + z
-   };
-   call incA(3);
-   call incA(5);
+   var a = transpose([1+2,1+9,3+6|1]);
    write(a)
 }

@@ -36,6 +36,8 @@ public interface Tipo {
 	 */
 	public abstract boolean eString();
 
+	public abstract boolean eMatriz();
+
 	/**
 	 * Compara este tipo com o tipo dado.
 	 * Dois tipos s�o iguais se eles t�m o mesmo nome.
