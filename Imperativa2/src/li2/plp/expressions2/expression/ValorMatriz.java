@@ -30,4 +30,9 @@ public class ValorMatriz extends ValorConcreto<Matriz>{
         }
         return false;
     }
+
+    @Override
+    public boolean checaTipo(AmbienteCompilacao amb) {
+        return this.valor().isMatrixValidSize();
+    }
 }

@@ -907,17 +907,6 @@ ListaExpressao PListaExpressao():
 	}
 }
 
-void PExpressaoMatrix() :
-{
-    PListaExpressao exp1;
-    PListaExpressao exp2;
-}
-{
-    <LBRACKET> exp1 = PListaExpressao() (<BIT_OR> exp2 = PListaExpressao() )* <RBRACKET>
-
-
-}
-
 DeclaracaoVariavel PDeclaracaoVariavel() :
 {
 	Id id;

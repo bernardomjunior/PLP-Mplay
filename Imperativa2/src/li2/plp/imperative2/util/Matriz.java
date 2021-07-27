@@ -88,8 +88,8 @@ public class Matriz {
 
         int[][] C = new int[A.linhas.size()][B.linhas.get(0).size()];
 
-        for (int i = 0; i < A.linhas.get(0).size(); i++) {
-            for (int j = 0; j < B.linhas.size(); j++) {
+        for (int i = 0; i < A.linhas.size(); i++) {
+            for (int j = 0; j < B.linhas.get(0).size(); j++) {
                 for (int k = 0; k < A.linhas.size(); k++) {
                     C[i][j] += A.linhas.get(i).get(k) * B.linhas.get(k).get(j);
                 }
