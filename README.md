@@ -36,30 +36,30 @@ Comando ::= Atribuicao
 
 Skip ::=
 
-Atribuicao ::= Id ":=" Expressao
+Atribuicao ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Id.java">Id</a> ":=" <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Expressao.java">Expressao</a>
 
-Expressao ::=  Valor | ExpUnaria | ExpBinaria | Id
+Expressao ::=  <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Valor.java">Valor</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpUnaria.java">ExpUnaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpBinaria.java">ExpBinaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Id.java">Id</a>
 
-Valor ::= ValorConcreto
+Valor ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorConcreto.java">ValorConcreto</a>
 
-ValorConcreto ::= ValorInteiro 
-             |    ValorBooleano
-             |    ValorString 
-             |    ValorMatriz
+ValorConcreto ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorInteiro.java">ValorInteiro </a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorBooleano.java">ValorBooleano</a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorString.java">ValorString </a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorMatriz.java">ValorMatriz</a>
 
 ExpUnaria ::= "-" Expressao 
-             |    "not" Expressao 
-             |    "length" Expressao 
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMenos.java">"not" Expressao </a>
+             |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpLength.java">"length" Expressao </a>
              |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpIdentity.java">"identity" Expressao</a>
              |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpTranspose.java">"transpose" Expressao</a>
 
-ExpBinaria ::= Expressao "+" Expressao
-          |    Expressao "-" Expressao
+ExpBinaria ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSoma.java">Expressao "+" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSub.java">Expressao "-" Expressao</a>
           |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMulti.java">Expressao "*" Expressao</a>
-          |    Expressao "and" Expressao
-          |    Expressao "or" Expressao
-          |    Expressao "==" Expressao
-          |    Expressao "++" Expressao
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpAnd.java">Expressao "and" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpOr.java">Expressao "or" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpEquals.java">Expressao "==" Expressao</a>
+          |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpConcat.java">Expressao "++" Expressao</a>
           |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSomaMatriz.java">Expressao "+++" Expressao</a>
           |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpSubMatriz.java">Expressao "---" Expressao</a>
           |    <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMultiMatrix.java">Expressao "***" Expressao</a>
