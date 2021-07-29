@@ -175,8 +175,6 @@ TOKEN : /* LITERALS */
       )*
       "\""
   >
-|
-  < MATRIX_LITERAL: <LBRACKET> <INTEGER_LITERAL> ((<COMMA> | <BIT_OR>) <INTEGER_LITERAL> )* <RBRACKET> >
 }
 
 TOKEN : /* IDENTIFIERS */
@@ -408,17 +406,6 @@ Id PId() :
 	}
 }
 
-Valor PValorMatriz() :
-{
-    Token token;
-}
-{
-    token = <MATRIX_LITERAL>
-    {
-        return new ValorMatriz(Matriz.parseMatriz(token.toString()));
-    }
-}
-
 Valor PValorInteiro() :
 {
 	Token token;
@@ -460,7 +447,6 @@ Valor PValor() :
       	  retorno = PValorInteiro() 
 		| retorno = PValorBooleano()
 		| retorno = PValorString()
-		| retorno = PValorMatriz()
     )
 	
 	{
@@ -532,6 +518,7 @@ Expressao PExpPrimaria() :
 	    retorno = PId()
 	  | retorno = PValor() 
 	  | <LPAREN> retorno = PExpressao() <RPAREN>
+	  | retorno = PExpMatriz()
 	)
 	{
 		return retorno; 
@@ -717,6 +704,22 @@ ExpMultiMatrix PExpMultMatriz() :
 	{return new ExpMultiMatrix(esq, dir);}
 }
 
+ExpMatriz PExpMatriz() :
+{
+ Expressao exp;
+ ArrayList<ArrayList<Expressao>> lista = new ArrayList<ArrayList<Expressao>>();
+ lista.add(new ArrayList<Expressao>());
+ int i = 0;
+}
+{
+    <LBRACKET> exp = PExpressao() {lista.get(i).add(exp);} ((<COMMA> | <BIT_OR> {i++; lista.add(new ArrayList<Expressao>());}) exp = PExpressao(){lista.get(i).add(exp);})* <RBRACKET>
+
+    {
+        System.out.println(lista);
+        return new ExpMatriz(lista);
+    }
+}
+
 Expressao PExpressao() :
 {
 	Expressao retorno;
@@ -727,8 +730,7 @@ Expressao PExpressao() :
 	  		retorno = PExpUnaria()
 	  | LOOKAHEAD (PExpPrimaria() (<OR> | <AND> | <MINUS> | <M_MINUS> | <PLUS> | <M_PLUS> | <EQ> | <CONCAT> | <STAR> | <M_MULT> ))
 	  		retorno = PExpBinaria()
-	  |
-	    retorno = PExpPrimaria()
+	  |                 retorno = PExpPrimaria()
 	)
 	{
 		return retorno;
