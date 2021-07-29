@@ -1,5 +1,15 @@
 # Paradigmas de Linguagens de Programação
 
+Reposótorio para a cadeira PLP(Paradigmas de Linguagens de Programação)
+
+Adicição de um tipo Matriz e funções relacionadas à Linaguem Imperativa2.
+
+## Integrantes
+
+- Bernardo de Moraes (bmsj@cin.ufpe.br)
+- Daniel Cauás       (dcc4@cin.ufpe.br)
+  
+
 
 ## Execução
 
@@ -38,7 +48,7 @@ Skip ::=
 
 Atribuicao ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Id.java">Id</a> ":=" <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Expressao.java">Expressao</a>
 
-Expressao ::=  <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Valor.java">Valor</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpUnaria.java">ExpUnaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpBinaria.java">ExpBinaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Id.java">Id</a>
+Expressao ::=  <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Valor.java">Valor</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpUnaria.java">ExpUnaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpBinaria.java">ExpBinaria</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/Id.java">Id</a> | <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ExpMatriz.java">ExpMatriz</a>
 
 Valor ::= <a href="https://github.com/bernardomjunior/PLP-Mplay/blob/matriz_funciona/Imperativa2/src/li2/plp/expressions2/expression/ValorConcreto.java">ValorConcreto</a>
 
